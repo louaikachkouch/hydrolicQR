@@ -1,0 +1,381 @@
+/* Hide PyScript elements */
+py-config {
+    display: none !important;
+}
+
+py-script {
+    display: none !important;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Main Section */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeInUp 0.6s ease-out;
+    margin: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Label */
+label {
+    display: block;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #333;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+}
+
+/* Buttons */
+button {
+    padding: 14px 32px;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    min-width: 150px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#generateBtn {
+    background: #007bff;
+    color: white;
+}
+
+#generateBtn:hover:not(:disabled) {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+#generateBtn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+#downloadBtn {
+    background: #28a745;
+    color: white;
+}
+
+#downloadBtn:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+#downloadBtn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .button-container button {
+        width: 100%;
+    }
+}
+
+/* QR Image */
+img {
+    width: min(12rem, 80vw);
+    height: min(12rem, 80vw);
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background: white;
+    padding: 15px;
+    border: 2px solid #f0f0f0;
+    object-fit: contain;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide hover effect on touch devices */
+@media (hover: none) {
+    img:hover {
+        transform: none;
+    }
+}
+
+/* Responsive Design */
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+    section {
+        max-width: 550px;
+        padding: 50px;
+    }
+}
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    section {
+        max-width: 500px;
+        padding: 35px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 30px 25px;
+        border-radius: 15px;
+    }
+    
+    h2 {
+        margin-bottom: 25px;
+    }
+    
+    button {
+        min-width: 140px;
+        padding: 12px 28px;
+    }
+}
+
+/* Large Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    section {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    button {
+        width: 100%;
+        margin: 5px 0;
+        min-width: unset;
+        padding: 14px 24px;
+    }
+    
+    input[type="text"] {
+        padding: 12px 16px;
+    }
+    
+    img {
+        margin-top: 25px;
+        padding: 12px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    section {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    input[type="text"] {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    img {
+        width: min(10rem, 75vw);
+        height: min(10rem, 75vw);
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    section {
+        padding: 15px 12px;
+    }
+    
+    h2 {
+        margin-bottom: 15px;
+    }
+    
+    button {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    img {
+        width: min(9rem, 70vw);
+        height: min(9rem, 70vw);
+    }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    
+    section {
+        padding: 20px;
+        margin: 10px 0;
+    }
+    
+    h2 {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+    
+    img {
+        width: min(8rem, 25vh);
+        height: min(8rem, 25vh);
+        margin-top: 15px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    section {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+    
+    button {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
