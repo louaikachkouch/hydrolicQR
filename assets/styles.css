@@ -200,6 +200,32 @@ img:hover {
     }
 }
 
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+footer a:active {
+    transform: translateY(0);
+}
+
 /* Responsive Design */
 
 /* Extra Large Screens */
@@ -268,6 +294,15 @@ img:hover {
     img {
         margin-top: 25px;
         padding: 12px;
+    }
+    
+    footer {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+    
+    footer a {
+        font-size: 0.85rem;
     }
 }
 
